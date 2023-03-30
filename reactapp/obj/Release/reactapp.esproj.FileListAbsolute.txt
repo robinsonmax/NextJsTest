@@ -1,0 +1,2 @@
+C:\Users\Max\source\repos\NetCoreNextJs\NextJsTest\reactapp\obj\Release\reactapp.esproj.SuggestedBindingRedirects.cache
+C:\Users\Max\source\repos\NetCoreNextJs\NextJsTest\reactapp\obj\Release\reactapp.esproj.CoreCompileInputs.cache
