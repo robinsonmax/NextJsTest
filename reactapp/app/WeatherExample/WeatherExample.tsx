@@ -8,10 +8,13 @@ export default function WeatherExample() {
   const [forecasts, setForecasts] = useState<any[]>();
 
   const getWeatherData = async () => {
-    const response = await fetch("weatherforecast");
+    const response = await fetch("api/v1/weatherforecast");
     const data = await response.json();
     setLoading(false);
-    //setData(data);
+
+    if (Array.isArray(data)) {
+      setForecasts(data);
+    }
   };
 
   useEffect(() => {
