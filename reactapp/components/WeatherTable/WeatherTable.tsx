@@ -1,19 +1,18 @@
+import { Get } from "@/ts/ApiController";
+
 export interface iWeatherForecast {
-  date: string;
+  date: Date;
   temperatureC: number;
   temperatureF: number;
   summary?: string;
 }
 
 async function getWeatherData() {
-  const response = await fetch("http://localhost:3000/api/v1/WeatherForecast", {
-    cache: "no-store",
-  });
-  const data = await response.json();
+  const data = await Get("WeatherForecast");
   return data as iWeatherForecast[];
 }
 
-export const LoadingTable = () => {
+export const LoadingWeatherTable = () => {
   return (
     <div className="p-5 text-center">
       <div className="spinner-border" role="status">
@@ -25,9 +24,6 @@ export const LoadingTable = () => {
 
 export async function WeatherTable() {
   const weatherData = await getWeatherData();
-
-  console.log("We loaded now");
-  console.log(weatherData);
 
   return (
     <>
@@ -46,7 +42,7 @@ export async function WeatherTable() {
         <tbody>
           {weatherData.map((forecast, index) => (
             <tr key={index}>
-              <td>{forecast.date}</td>
+              <td>{forecast.date.toString()}</td>
               <td>{forecast.temperatureC}</td>
               <td>{forecast.temperatureF}</td>
               <td>{forecast.summary}</td>

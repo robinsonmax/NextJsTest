@@ -7,7 +7,7 @@ export default function CsNavbar() {
   return (
     <Navbar expand="lg" className={"border-bottom"}>
       <Container>
-        <Navbar.Brand href="/">Next JS / .Net Core API Test</Navbar.Brand>
+        <Navbar.Brand href="/">Home</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>

@@ -3,14 +3,16 @@ import styles from "./Widget.module.scss";
 export default function CsWidget({
   title,
   children,
-  padBody = true,
+  padBody,
 }: {
   title: string;
   children: React.ReactNode;
-  padBody: boolean;
+  padBody?: boolean;
 }) {
+  if (padBody === undefined) padBody = true;
+
   return (
-    <div className={`${styles.container} shadow-sm`}>
+    <div className={`${styles.container} shadow`}>
       <div className={styles.header}>
         <h3 className={styles.title}>{title}</h3>
       </div>

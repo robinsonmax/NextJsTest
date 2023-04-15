@@ -1,19 +1,19 @@
 import {
-  LoadingTable,
+  LoadingWeatherTable,
   WeatherTable,
 } from "@/components/WeatherTable/WeatherTable";
-import Widget from "@/components/Widget/Widget";
+import CsWidget from "@/components/Widget/Widget";
 import { Suspense } from "react";
 
 export default async function WeatherExample() {
   return (
     <main>
       <h1 className={"display-4 mb-4"}>Weather Forecast Example</h1>
-      <Widget title="Results from default API" padBody={false}>
-        <Suspense fallback={<LoadingTable />}>
+      <CsWidget title="Results from default API" padBody={false}>
+        <Suspense fallback={<LoadingWeatherTable />}>
           <WeatherTable />
         </Suspense>
-      </Widget>
+      </CsWidget>
     </main>
   );
 }
