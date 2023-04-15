@@ -1,0 +1,24 @@
+$padding: 1.5rem;
+
+.container {
+  border: 1px solid gray;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.header {
+  padding: $padding;
+}
+
+.title {
+  margin-bottom: 0;
+}
+
+.body {
+  overflow-x: auto;
+}
+
+.padBody {
+  padding-inline: $padding;
+  padding-bottom: $padding;
+}

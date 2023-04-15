@@ -1,0 +1,20 @@
+// Import bootstrap functions before any variables
+@import "bootstrap/scss/functions";
+
+// Import Custom Variables
+@import "./variables";
+
+// Import the remaining bootstrap variables that haven't been overwritten
+@import "bootstrap/scss/variables";
+
+// Import remaining bootstrap methods
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// Import custom components
+@import "./components";
+@import "./global";
+
+// Import bootstrap
+@import "bootstrap/scss/bootstrap.scss";

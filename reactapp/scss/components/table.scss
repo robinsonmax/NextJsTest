@@ -1,0 +1,5 @@
+table.table-ignore-bottom-row-border {
+  tbody tr:last-of-type td {
+    border-bottom: none;
+  }
+}

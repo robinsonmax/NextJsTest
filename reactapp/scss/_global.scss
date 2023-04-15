@@ -1,0 +1,24 @@
+$body-padding: 1.5rem;
+
+$footer-padding: $body-padding;
+$footer-height: 1.5rem;
+$total-footer-height: $footer-padding + $footer-height; //calc(#{($footer-padding)} + #{$footer-height});
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: $total-footer-height;
+}
+
+main {
+  padding: $body-padding;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: $total-footer-height;
+  padding-bottom: $footer-padding;
+  padding-inline: $footer-padding;
+}
