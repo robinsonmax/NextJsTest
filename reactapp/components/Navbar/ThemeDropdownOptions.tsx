@@ -13,7 +13,7 @@ export default function ThemeDropdownOptions() {
   };
 
   return (
-    <>
+    <NavDropdown title="Theme" id="basic-nav-dropdown">
       <NavDropdown.Item
         onClick={() => UpdateTheme(Themes.Auto)}
         active={currentTheme === Themes.Auto}
@@ -32,6 +32,6 @@ export default function ThemeDropdownOptions() {
       >
         Dark
       </NavDropdown.Item>
-    </>
+    </NavDropdown>
   );
 }
