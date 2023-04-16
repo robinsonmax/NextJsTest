@@ -8,5 +8,6 @@ export const Get = async (path: string, options?: RequestInit) => {
   }
 
   const response = await fetch(baseUrl + path, options);
+
   return response.json();
 };

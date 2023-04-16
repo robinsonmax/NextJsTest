@@ -1,1 +1,5 @@
-export { default } from "./WeatherExample";
+export { default } from "./_WeatherExample";
+
+export const metadata = {
+  title: "Weather Example",
+};

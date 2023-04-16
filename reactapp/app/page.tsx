@@ -11,6 +11,12 @@ export default function Dashboard() {
     <main>
       <h1 className={"display-4 mb-4"}>This is the dashboard</h1>
       <p>
+        This example caches each dashboard panel, so subsequent page loads are
+        instant after the initial load.
+        <br />
+        The cache becomes stale after for 15 seconds.
+      </p>
+      <p>
         TODO: Look at{" "}
         <a
           href="https://github.com/react-grid-layout/react-grid-layout"

@@ -1,20 +1,11 @@
 import { Get } from "@/ts/ApiController";
 import CsWidget from "../Widget/Widget";
 
-export interface iDashboardPanel {
+export type DashboardPanel = {
   asOf: Date;
   title: string;
   panelJson: string;
-}
-
-async function getPanelData(panelId: number) {
-  const data = await Get(`dashboard?id=${panelId}`, {
-    next: {
-      revalidate: 15,
-    },
-  });
-  return data as iDashboardPanel;
-}
+};
 
 export const LoadingDashboardPanel = () => {
   return (
@@ -29,12 +20,16 @@ export const LoadingDashboardPanel = () => {
 };
 
 export async function DashboardPanel({ panelId }: { panelId: number }) {
-  const panelData = await getPanelData(panelId);
+  const data: DashboardPanel = await Get(`dashboard?id=${panelId}`, {
+    next: {
+      revalidate: 15,
+    },
+  });
 
   return (
-    <CsWidget title={panelData.title}>
-      <p>Last Updated: {panelData.asOf.toString()}</p>
-      <p className="mb-0">JSON: {panelData.panelJson || "Not Provided"}</p>
+    <CsWidget title={data.title}>
+      <p>Last Updated: {data.asOf.toString()}</p>
+      <p className="mb-0">JSON: {data.panelJson || "Not Provided"}</p>
     </CsWidget>
   );
 }

@@ -1,16 +1,11 @@
 import { Get } from "@/ts/ApiController";
 
-export interface iWeatherForecast {
+export type WeatherForecast = {
   date: Date;
   temperatureC: number;
   temperatureF: number;
   summary?: string;
-}
-
-async function getWeatherData() {
-  const data = await Get("WeatherForecast");
-  return data as iWeatherForecast[];
-}
+};
 
 export const LoadingWeatherTable = () => {
   return (
@@ -23,7 +18,7 @@ export const LoadingWeatherTable = () => {
 };
 
 export async function WeatherTable() {
-  const weatherData = await getWeatherData();
+  const data: WeatherForecast[] = await Get("WeatherForecast");
 
   return (
     <>
@@ -40,7 +35,7 @@ export async function WeatherTable() {
           </tr>
         </thead>
         <tbody>
-          {weatherData.map((forecast, index) => (
+          {data.map((forecast, index) => (
             <tr key={index}>
               <td>{forecast.date.toString()}</td>
               <td>{forecast.temperatureC}</td>

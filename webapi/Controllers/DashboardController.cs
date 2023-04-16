@@ -10,6 +10,9 @@ namespace webapi.Controllers
         [HttpGet(Name = "GetPanel")]
         public DashboardPanel Get(int id)
         {
+            // Just delaying the API response to test loading indicators
+            Thread.Sleep(200);
+
             return new DashboardPanel() { 
                 AsOf = DateTime.UtcNow,
                 Title = $"This is panel {id}",
